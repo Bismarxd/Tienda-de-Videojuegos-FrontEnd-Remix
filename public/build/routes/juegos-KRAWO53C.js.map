@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/juegos.jsx"],
+  "sourcesContent": ["import {Outlet, useOutletContext} from \"@remix-run/react\";\r\nimport styles from '~/styles/juegos.css'\r\n\r\n\r\n\r\nexport function links() {\r\n  return[\r\n    {\r\n      rel: 'stylesheet',\r\n      href: styles\r\n    }\r\n  ]\r\n  \r\n}\r\n\r\n\r\n\r\n\r\nfunction Tienda() {\r\n  const data = useOutletContext()\r\n  console.log(data);\r\n\r\n\r\n  return (\r\n    <main className=\"contenedor\">\r\n        \r\n        <Outlet\r\n          context={useOutletContext()}\r\n        />\r\n\r\n    </main>\r\n  )\r\n}\r\n\r\nexport default Tienda"],
+  "mappings": ";;;;;;;;;;;;;AA0BQ;AArBD,SAAS,QAAQ;AACtB,SAAM;AAAA,IACJ;AAAA,MACE,KAAK;AAAA,MACL,MAAM;AAAA,IACR;AAAA,EACF;AAEF;AAKA,SAAS,SAAS;AAChB,QAAM,OAAO,iBAAiB;AAC9B,UAAQ,IAAI,IAAI;AAGhB,SACE,mDAAC,UAAK,WAAU,cAEZ;AAAA,IAAC;AAAA;AAAA,MACC,SAAS,iBAAiB;AAAA;AAAA,IAD5B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAEA,KAJJ;AAAA;AAAA;AAAA;AAAA,SAMA;AAEJ;AAEA,IAAOA,kBAAQ;",
+  "names": ["juegos_default"]
+}

@@ -1,0 +1,265 @@
+:root {
+    --primary: #030e4dab;
+    --black: #262626;
+    --white: #FFF;
+    --font-family1: 'Alkatra', cursive;
+    --font-family2: 'Bebas Neue', cursive;
+    --font-family3: 'Delicious Handrawn', cursive;
+    --font-family4: 'Indie Flower', cursive;
+    --font-family5: 'Roboto Slab', serif;
+
+  }
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+   
+
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  [class*="contenedor"], 
+  main {
+    width: min(95%, 120rem);
+    margin: 3rem auto;
+
+  }
+  [class*="heading"] {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 5rem 0;
+  }
+
+
+/* Header */
+.header {
+    position: relative;
+   
+    background-image: url(/img/header.jpg);
+    background-size: 50% auto;
+    background-position: center center;
+
+   
+    z-index: 0;
+  }
+  
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(78, 78, 78, 0.678), rgba(0, 0, 0, 0.295));
+  }
+
+.header .logo{
+    width: 40rem;
+    margin-top: -3rem;
+    margin-bottom: -10rem;
+    z-index: 1;
+
+}
+
+@media (min-width: 768px) {
+    .header .logo{
+        width: 60rem;
+        margin-top: 5rem;
+        margin-left: -10rem;
+        z-index: 1;
+    
+    }
+    
+}
+
+.barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10rem;
+
+}
+
+@media (min-width: 768px) {
+    .barra{
+        flex-direction: row;
+        justify-content: space-between;
+  
+        margin-top: -10rem;
+
+    }
+
+}
+
+.header .navegacion{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--font-family1);
+    margin-top: 8rem;
+}
+
+@media (min-width: 768px) {
+    .header .navegacion{
+        display: flex;
+        gap: 4rem;
+        font-family: var(--font-family1);
+        margin-top: -10rem;
+    }
+
+    .header .navegacion a {
+        
+        font-size: 2.5rem;
+       
+      }
+
+}
+
+.header .navegacion a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+    z-index: 1;
+    transition: background-color 0.3s ease-in-out; /* Agrega una transición suave */
+    position: relative;
+  }
+  
+  .header .navegacion a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease-in-out; /* Agrega una transición suave */
+  }
+  
+  .header .navegacion a:hover,.header .active {
+    background-color: var(--primary); /* Cambia el color de fondo al pasar el ratón por encima del enlace */
+  }
+  
+  .header .navegacion a:hover::before {
+    width: 100%; /* Ajusta el ancho del pseudo-elemento a medida que se pasa el ratón por encima del enlace */
+
+  }
+
+  .header .navegacion img {
+    
+    width: 7rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .header .navegacion img:hover {
+    filter: brightness(0.8);
+  }
+
+  /* Footer */
+
+  .footer {
+    background-color: #5300538e; /* Agrega un fondo de color o una imagen de fondo */
+    padding: 2rem 0; /* Ajusta el padding según tus necesidades */
+    font-family: var(--font-family4);
+
+    
+    
+    text-align: center; /* Alinea los enlaces y los derechos de autor al centro */
+    
+    
+    
+  }
+
+  .footer .navegacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-bottom: 1rem; /* Agrega un margen inferior para separar los enlaces del texto de derechos de autor */
+    
+
+  }
+
+  @media (min-width: 768px) {
+
+    .footer {
+        background-color: #5300538e; /* Agrega un fondo de color o una imagen de fondo */
+        padding: 2rem 0; /* Ajusta el padding según tus necesidades */
+        
+        
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        font-family: var(--font-family4);
+        text-align: center; /* Alinea los enlaces y los derechos de autor al centro */
+        
+        
+        
+      }
+
+    .footer .navegacion a {
+    
+      
+        font-size: 4rem;
+      }
+
+    .footer .navegacion{
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: center;
+        margin-bottom: 1rem; /* Agrega un margen inferior para separar los enlaces del texto de derechos de autor */
+    
+    }
+    .footer .navegacion :last-of-type{
+     display: none;
+  
+  }
+
+}
+  
+  .footer .navegacion a {
+    
+    margin: 0 1rem; /* Ajusta el margen según tus necesidades */
+    color: #383838; /* Cambia el color si lo deseas */
+    text-decoration: none;
+    font-size: 3rem;
+  }
+
+  .footer .navegacion a:hover,.header .active {
+    color: #FFF;
+  }
+  
+  .footer .copyrigth {
+    font-size: 2rem; /* Ajusta el tamaño de letra según tus necesidades */
+    color: #2e2e2e; /* Cambia el color si lo deseas */
+  }
+
+  /* Error */
+  .error, .error-enlace {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .error-enlace {
+    display: block;
+    color: aqua;
+    text-decoration: none;
+  }
+  

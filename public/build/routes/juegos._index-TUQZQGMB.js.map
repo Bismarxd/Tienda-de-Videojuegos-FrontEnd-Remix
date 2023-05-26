@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["empty-module:~/models/juegos.server", "../../../app/routes/juegos._index.jsx"],
+  "sourcesContent": ["module.exports = {};", "import { useLoaderData} from \"@remix-run/react\";\r\nimport { getJuegos } from \"~/models/juegos.server\"\r\nimport ListadoJuegos from \"~/components/listado-juegos\";\r\n\r\nexport function meta() {\r\n  return [\r\n    {\r\n      title: 'Pixels - Tienda de Videojuegos'\r\n    }\r\n  ]\r\n}\r\n\r\n\r\n\r\nexport async function loader() {\r\n\r\n  const juegos = await getJuegos()\r\n  return juegos.data;\r\n\r\n}\r\n\r\n\r\nfunction Tienda() {\r\n\r\n  const juegos = useLoaderData();\r\n\r\n\r\n  return (\r\n\r\n        <ListadoJuegos\r\n          juegos={juegos}\r\n        />\r\n\r\n  )\r\n}\r\n\r\nexport default Tienda"],
+  "mappings": ";;;;;;;;;;;;;AAAA;AAAA;AAAA,WAAO,UAAU,CAAC;AAAA;AAAA;;;ACClB,oBAA0B;AA4BlB;AAzBD,SAAS,OAAO;AACrB,SAAO;AAAA,IACL;AAAA,MACE,OAAO;AAAA,IACT;AAAA,EACF;AACF;AAYA,SAAS,SAAS;AAEhB,QAAM,SAAS,cAAc;AAG7B,SAEM;AAAA,IAAC;AAAA;AAAA,MACC;AAAA;AAAA,IADF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAEA;AAGR;AAEA,IAAO,uBAAQ;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["empty-module:~/models/posts.server", "../../../app/routes/blog.jsx"],
+  "sourcesContent": ["module.exports = {};", "import { useLoaderData } from \"@remix-run/react\";\r\nimport { getPosts } from '~/models/posts.server'\r\nimport styles from '~/styles/blog.css'\r\nimport ListadoPost from \"../components/listado-post\";\r\n\r\nexport function links() {\r\n  return[\r\n    {\r\n      rel: 'stylesheet',\r\n      href: styles\r\n    }\r\n  ]\r\n  \r\n}\r\n\r\nexport async function loader() {\r\n  const posts = await getPosts()\r\n  \r\n  return posts?.data\r\n}\r\n\r\nfunction Blog() {\r\n\r\n  const posts = useLoaderData()\r\n\r\n\r\n  return (\r\n    <main className=\"contenedor\">\r\n      <ListadoPost\r\n        posts={posts}\r\n      />\r\n\r\n    </main>\r\n  )\r\n}\r\n\r\nexport default Blog"],
+  "mappings": ";;;;;;;;;;;;;;;;AAAA;AAAA;AAAA,WAAO,UAAU,CAAC;AAAA;AAAA;;;ACClB,mBAAyB;AA2BnB;AAvBC,SAAS,QAAQ;AACtB,SAAM;AAAA,IACJ;AAAA,MACE,KAAK;AAAA,MACL,MAAM;AAAA,IACR;AAAA,EACF;AAEF;AAQA,SAAS,OAAO;AAEd,QAAM,QAAQ,cAAc;AAG5B,SACE,mDAAC,UAAK,WAAU,cACd;AAAA,IAAC;AAAA;AAAA,MACC;AAAA;AAAA,IADF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAEA,KAHF;AAAA;AAAA;AAAA;AAAA,SAKA;AAEJ;AAEA,IAAOA,gBAAQ;",
+  "names": ["blog_default"]
+}
